@@ -1,17 +1,65 @@
 /* Fuentes
+Logo
 font-family: 'Gochi Hand', cursive;
+Pagina en general
 font-family: 'Open Sans', sans-serif;
+Titulos
 font-family: 'Raleway', sans-serif;
+*/
+
+/* Colores
+
+colorLigtherBlue: Para textos sobre fondos azules
+colorBlue: Para resaltar palabras en textos
+colorLigthYellow: Para resaltar palabras en textos sobre fondos azules
+colorGray: Para textos que no necesiten resaltar, es el color que tiene el body
+bgDarkBlue: Fondo azul oscuro, solo para resaltar
+bgMediumBlue:Fondo azul medio, para el hero o similares
+bgBlue: Fondo azul normal, mayormente para botones
+bgGray: Para fondos que no necesiten resaltar
 */
 
 body {
   font-family: 'Open Sans', sans-serif;
+  color: #697477;
 }
 
-.cursiveFont {
+.fontCursive {
   font-family: 'Gochi Hand', cursive;
 }
 
-.titleFont {
+.fontTitle {
   font-family: 'Raleway', sans-serif;
+}
+
+.colorLigtherBlue {
+  color: #b7defa;
+}
+
+.colorBlue {
+  color: #1192ee;
+}
+
+.colorLigthYellow {
+  color: #ffdb9e;
+}
+
+.colorGray {
+  color: #697477;
+}
+
+.bgDarkBlue {
+  background-color: #052c48;
+}
+
+.bgMediumBlue {
+  background-color: #0c66a6;
+}
+
+.bgBlue {
+  background-color: #1192ee;
+}
+
+.bgLigthGrey {
+  background-color: #dcdcdc;
 }
