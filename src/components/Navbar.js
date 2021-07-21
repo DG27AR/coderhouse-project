@@ -1,20 +1,29 @@
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import { FaLemon } from 'react-icons/fa';
+import { FaHome, FaSignInAlt } from 'react-icons/fa';
+import { SiCodechef } from 'react-icons/si';
 
-function RBSNavbar() {
+function MyNavbar() {
   return (
-    <Navbar bg="primary" variant="dark" expand="lg">
+    <Navbar bg="mediumblue" variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand href="#home" className="fontCursive">
-          <FaLemon className="me-2" />
-          Lima
+        <Navbar.Brand href="#home">
+          <span className="fontCursive colorLightGrey h2">
+            <SiCodechef className="me-1" /> Lo de Rodo
+          </span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link href="#features">
+              <FaSignInAlt className="me-1" />
+              Ingresar
+            </Nav.Link>
+            <hr class="dropdown-divider colorLightGrey"></hr>
+            <Nav.Link href="#home">
+              <FaHome className="me-1" />
+              Inicio
+            </Nav.Link>
+            <Nav.Link href="#features">Promociones</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -22,4 +31,4 @@ function RBSNavbar() {
   );
 }
 
-export default RBSNavbar;
+export default MyNavbar;

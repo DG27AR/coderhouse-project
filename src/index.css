@@ -17,9 +17,10 @@ bgDarkBlue: Fondo azul oscuro, solo para resaltar
 bgMediumBlue:Fondo azul medio, para el hero o similares
 bgBlue: Fondo azul normal, mayormente para botones
 bgGray: Para fondos que no necesiten resaltar
+bg-mediumblue: Custom variant
 */
 
-body {
+.reboot {
   font-family: 'Open Sans', sans-serif;
   color: #697477;
 }
@@ -32,7 +33,11 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
-.colorLigtherBlue {
+.bg-mediumblue {
+  background-color: #0c66a6;
+}
+
+.colorLighterBlue {
   color: #b7defa;
 }
 
@@ -40,12 +45,16 @@ body {
   color: #1192ee;
 }
 
-.colorLigthYellow {
+.colorLightYellow {
   color: #ffdb9e;
 }
 
 .colorGray {
   color: #697477;
+}
+
+.colorLightGrey {
+  color: #ffffff8c;
 }
 
 .bgDarkBlue {
@@ -60,6 +69,6 @@ body {
   background-color: #1192ee;
 }
 
-.bgLigthGrey {
+.bgLightGrey {
   background-color: #dcdcdc;
 }
