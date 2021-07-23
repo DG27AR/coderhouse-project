@@ -26,9 +26,18 @@ bg-mediumblue: Custom variant
   color: #697477;
 }
 
-.logo {
-  width: 45px;
-  height: 45px;
+.customNavbar {
+  height: 5px;
+}
+
+.rounder {
+  border-radius: 50%;
+}
+
+.sticky-nav {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
 }
 
 .fontCursive {
@@ -77,4 +86,8 @@ bg-mediumblue: Custom variant
 
 .bgLightGrey {
   background-color: #dcdcdc;
+}
+
+.bgYellow {
+  background-color: rgb(217, 255, 51);
 }
