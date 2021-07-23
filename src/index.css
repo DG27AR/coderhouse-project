@@ -1,6 +1,7 @@
 /* Fuentes
 Logo
 font-family: 'Gochi Hand', cursive;
+font-family: 'Oswald', sans-serif;
 Pagina en general
 font-family: 'Open Sans', sans-serif;
 Titulos
@@ -25,8 +26,13 @@ bg-mediumblue: Custom variant
   color: #697477;
 }
 
+.logo {
+  width: 45px;
+  height: 45px;
+}
+
 .fontCursive {
-  font-family: 'Gochi Hand', cursive;
+  font-family: 'Oswald', sans-serif;
 }
 
 .fontTitle {
@@ -54,7 +60,7 @@ bg-mediumblue: Custom variant
 }
 
 .colorLightGrey {
-  color: #ffffff8c;
+  color: #dcdcdc;
 }
 
 .bgDarkBlue {
