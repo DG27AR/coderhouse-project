@@ -1,10 +1,11 @@
 import { Card, CardGroup, Container } from 'react-bootstrap';
+import { default as cardImg } from '../assets/367x160.jpg';
 const MyProducts = () => {
   return (
     <Container className="mt-5">
       <CardGroup>
         <Card>
-          <Card.Img variant="top" src="./assets/367x160.jpg" />
+          <Card.Img variant="top" src={cardImg} />
           <Card.Body>
             <Card.Title>Card title</Card.Title>
             <Card.Text>
@@ -17,7 +18,7 @@ const MyProducts = () => {
           </Card.Footer>
         </Card>
         <Card>
-          <Card.Img variant="top" src="holder.js/100px160" />
+          <Card.Img variant="top" src={cardImg} />
           <Card.Body>
             <Card.Title>Card title</Card.Title>
             <Card.Text>This card has supporting text below as a natural lead-in to additional content. </Card.Text>
@@ -27,7 +28,7 @@ const MyProducts = () => {
           </Card.Footer>
         </Card>
         <Card>
-          <Card.Img variant="top" src="holder.js/100px160" />
+          <Card.Img variant="top" src={cardImg} />
           <Card.Body>
             <Card.Title>Card title</Card.Title>
             <Card.Text>
