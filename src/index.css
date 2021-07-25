@@ -30,16 +30,6 @@ bg-mediumblue: Custom variant
   height: 5px;
 }
 
-.rounder {
-  border-radius: 50%;
-}
-
-.sticky-nav {
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
-}
-
 .fontCursive {
   font-family: 'Oswald', sans-serif;
 }
