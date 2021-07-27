@@ -1,8 +1,10 @@
-import { Card, CardGroup, Container } from 'react-bootstrap';
+import { Card, CardGroup, Container, Alert } from 'react-bootstrap';
 import { default as cardImg } from '../assets/367x160.jpg';
-const MyProducts = () => {
+
+function ItemListContainer(params) {
   return (
-    <Container className="mt-5">
+    <Container className="mt-3">
+      <Alert variant="warning">Nuestro horario de hoy es de {params.greeting}</Alert>
       <CardGroup>
         <Card>
           <Card.Img variant="top" src={cardImg} />
@@ -43,6 +45,6 @@ const MyProducts = () => {
       </CardGroup>
     </Container>
   );
-};
+}
 
-export default MyProducts;
+export default ItemListContainer;

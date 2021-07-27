@@ -1,14 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.css'; // Bootstrap CSS
 import MyNavbar from './components/Navbar';
-import MyProducts from "./components/MyProducts";
+import ItemListContainer from './components/ItemListContainer';
 
 function App() {
   return (
-  <>
-  <MyNavbar />
-  <MyProducts />
-  </>
-  )
+    <>
+      <MyNavbar />
+      <ItemListContainer greeting="20 a 2!" />
+    </>
+  );
 }
 
 export default App;

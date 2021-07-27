@@ -1,30 +1,21 @@
-import { Navbar, Container, Badge, Form, FormControl, Button } from 'react-bootstrap';
-import { FaSearch, FaShoppingCart } from 'react-icons/fa';
+import { Navbar, Container } from 'react-bootstrap';
 import { default as myLogo } from '../assets/logo.svg';
+import CartWidget from './CartWidget';
 
 function MyNavbar() {
   return (
     <>
       <Navbar bg="dark" variant="dark" expand="lg" className="sticky-top">
         <Container>
-          <Navbar.Brand className="colorLightGrey fontCursive" href="#home">
+          <Navbar.Brand className="colorLightGrey fontLogo" href="#home">
             <img alt="" src={myLogo} width="30" height="30" className="d-inline-block align-top my-0" />
-            <span className="d-inline-block align-top my-0 ms-2">LO DE RODO</span>
+            <span className="d-inline-block align-top my-0 ms-2 fs-5">LO DE RODO</span>
           </Navbar.Brand>
           <span>
-            <FaShoppingCart className="colorLightGrey fs-5 mx-1" width="30" height="30" />
-            <Badge className="bgYellow text-dark rounder p-1" pill>
-              0
-            </Badge>
+            <CartWidget q={0} />
           </span>
         </Container>
       </Navbar>
-      <Form className="d-flex my-1 mx-4">
-        <FormControl type="search" placeholder="Buscar" className="me-2" aria-label="Search" />
-        <Button variant="dark" className="p-2">
-          <FaSearch />
-        </Button>
-      </Form>
     </>
   );
 }

@@ -10,15 +10,6 @@ font-family: 'Raleway', sans-serif;
 
 /* Colores
 
-colorLigtherBlue: Para textos sobre fondos azules
-colorBlue: Para resaltar palabras en textos
-colorLigthYellow: Para resaltar palabras en textos sobre fondos azules
-colorGray: Para textos que no necesiten resaltar, es el color que tiene el body
-bgDarkBlue: Fondo azul oscuro, solo para resaltar
-bgMediumBlue:Fondo azul medio, para el hero o similares
-bgBlue: Fondo azul normal, mayormente para botones
-bgGray: Para fondos que no necesiten resaltar
-bg-mediumblue: Custom variant
 */
 
 .reboot {
@@ -26,12 +17,10 @@ bg-mediumblue: Custom variant
   color: #697477;
 }
 
-.customNavbar {
-  height: 5px;
-}
-
-.fontCursive {
+.fontLogo {
   font-family: 'Oswald', sans-serif;
+  letter-spacing: -1px;
+  word-spacing: -1px;
 }
 
 .fontTitle {
