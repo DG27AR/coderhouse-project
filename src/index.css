@@ -14,6 +14,7 @@ font-family: 'Raleway', sans-serif;
 
 .reboot {
   font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
   color: #697477;
 }
 
@@ -27,10 +28,10 @@ font-family: 'Raleway', sans-serif;
   font-family: 'Raleway', sans-serif;
 }
 
-.bg-mediumblue {
-  background-color: #0c66a6;
+.bgPrimary {
+  background-color: rgb(252, 252, 252);
 }
-
+/*
 .colorLighterBlue {
   color: #b7defa;
 }
@@ -73,4 +74,4 @@ font-family: 'Raleway', sans-serif;
 
 .btn-yellow {
   background-color: rgb(217, 255, 51);
-}
+} */

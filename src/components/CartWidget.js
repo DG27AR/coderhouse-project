@@ -4,8 +4,8 @@ import { FaShoppingCart } from 'react-icons/fa';
 function CartWidget(props) {
   return (
     <>
-      <FaShoppingCart className="colorLightGrey fs-5 mx-1" width="30" height="30" />
-      <Badge className="bg-warning text-dark p-1" pill>
+      <FaShoppingCart className="text-light mx-1 fs-3" />
+      <Badge className="bg-light p-1 m-0" pill>
         {props.q}
       </Badge>
     </>

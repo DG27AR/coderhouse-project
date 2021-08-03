@@ -7,10 +7,10 @@ function MyNavbar() {
     <>
       <Navbar bg="dark" variant="dark" expand="lg" className="sticky-top">
         <Container>
-          <Navbar.Brand className="colorLightGrey fontLogo" href="#home">
-            <img alt="" src={myLogo} width="30" height="30" className="d-inline-block align-top my-0" />
-            <span className="d-inline-block align-top my-0 ms-2 fs-5">LO DE RODO</span>
-          </Navbar.Brand>
+          <span className="fontLogo text-white align-top fs-3">
+            <img alt="Lo de Rodo" src={myLogo} width="40" height="40" className="d-inline-block align-top my-0 me-2" />
+            LO DE RODO
+          </span>
           <span>
             <CartWidget q={0} />
           </span>
