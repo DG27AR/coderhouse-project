@@ -31,7 +31,7 @@ const ItemCount = props => {
 
   return (
     <>
-      <Container className="my-2 px-2">
+      <Card className="mb-0 px-2 pt-2">
         <Card.Text className="bgPrimary">
           <Row>
             <Col className="text-start">
@@ -54,7 +54,7 @@ const ItemCount = props => {
             </Button>
           </Row>
         </Card.Text>
-      </Container>
+      </Card>
     </>
   );
 };

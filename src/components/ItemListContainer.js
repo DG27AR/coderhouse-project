@@ -1,26 +1,26 @@
-import { Container, Alert, Col, Row } from 'react-bootstrap';
-import ItemContainer from './ItemContainer';
+import { useState, useEffect } from 'react';
+import { Container, Alert, Row } from 'react-bootstrap';
+import ItemList from './ItemList';
+import p from './productos';
 
-function ItemListContainer(params) {
+function ItemListContainer(itemListContainer) {
+  const [productos, setProductos] = useState([]);
+
+  useEffect(() => {
+    const promise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(productos);
+      }, 2000);
+    });
+
+    promise.then(productos => setProductos(p));
+  }, []);
+
   return (
     <Container>
-      <Alert variant="warning">Nuestro horario de hoy es de {params.greeting}</Alert>
+      <Alert variant="warning">Nuestro horario de hoy es de {itemListContainer.greeting}</Alert>
       <Row>
-        <Col xs={12} md={6} lg={4} className="mb-2">
-          <ItemContainer />
-        </Col>
-        <Col xs={12} md={6} lg={4}>
-          <ItemContainer />
-        </Col>
-        <Col xs={12} md={6} lg={4}>
-          <ItemContainer />
-        </Col>
-        <Col xs={12} md={6} lg={4}>
-          <ItemContainer />
-        </Col>
-        <Col xs={12} md={6} lg={4}>
-          <ItemContainer />
-        </Col>
+        <ItemList productos={productos} />
       </Row>
     </Container>
   );
