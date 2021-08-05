@@ -31,8 +31,8 @@ const ItemCount = itemCount => {
 
   return (
     <>
-      <Card className="mb-0 px-2 pt-2">
-        <Container className="bgPrimary">
+      <Card className="mb-0 pt-2">
+        <Container className="bgPrimary p-0">
           <Row>
             <Col className="text-start">
               <Button variant="outline-dark" size="sm" onClick={() => setContador(restar(contador, 1))}>
@@ -50,7 +50,7 @@ const ItemCount = itemCount => {
           </Row>
           <Row className="my-2 mx-0">
             <Button variant="primary" size="sm" onClick={() => itemCount.onAdd(contador)}>
-              Añadir al pedido <FaCartPlus />
+              Add to the cart <FaCartPlus />
             </Button>
           </Row>
         </Container>

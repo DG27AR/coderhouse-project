@@ -31,6 +31,10 @@ font-family: 'Raleway', sans-serif;
 .bgPrimary {
   background-color: rgb(252, 252, 252);
 }
+
+.bgPrimaryTransparent {
+  background-color: rgba(41, 45, 47, 0.5);
+}
 /*
 .colorLighterBlue {
   color: #b7defa;

@@ -18,7 +18,9 @@ function ItemListContainer(itemListContainer) {
 
   return (
     <Container>
-      <Alert variant="warning">Nuestro horario de hoy es de {itemListContainer.greeting}</Alert>
+      <Alert className="mt-1 p-1 text-center" variant="warning">
+        {itemListContainer.greeting}
+      </Alert>
       <Row>
         <ItemList productos={productos} />
       </Row>
