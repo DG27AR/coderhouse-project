@@ -31,11 +31,16 @@ const ItemCount = itemCount => {
 
   return (
     <>
-      <Card className="mb-0 pt-2">
+      <Card className="mb-0 py-0">
         <Container className="bgPrimary p-0">
           <Row>
             <Col className="text-start">
-              <Button variant="outline-dark" size="sm" onClick={() => setContador(restar(contador, 1))}>
+              <Button
+                className="px-3 rounded-0"
+                variant="outline-secondary"
+                size="sm"
+                onClick={() => setContador(restar(contador, 1))}
+              >
                 <FaMinus />
               </Button>
             </Col>
@@ -43,13 +48,18 @@ const ItemCount = itemCount => {
               <Container className="text-center fs-5">{contador}</Container>
             </Col>
             <Col className="text-end">
-              <Button variant="outline-dark" size="sm" onClick={() => setContador(sumar(contador, 1))}>
+              <Button
+                className="px-3 rounded-0"
+                variant="outline-secondary"
+                size="sm"
+                onClick={() => setContador(sumar(contador, 1))}
+              >
                 <FaPlus />
               </Button>
             </Col>
           </Row>
-          <Row className="my-2 mx-0">
-            <Button variant="primary" size="sm" onClick={() => itemCount.onAdd(contador)}>
+          <Row className="my-0 mx-0">
+            <Button className="rounded-0" variant="primary" size="sm" onClick={() => itemCount.onAdd(contador)}>
               Add to the cart <FaCartPlus />
             </Button>
           </Row>

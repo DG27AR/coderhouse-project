@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Container, Alert, Row } from 'react-bootstrap';
-import ItemList from './ItemList';
+import { Container } from 'react-bootstrap';
+import ItemDetail from './ItemDetail';
 import p from './productos';
 
-function ItemListContainer(props) {
+function ItemDetailContainer(props) {
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
@@ -16,16 +16,13 @@ function ItemListContainer(props) {
     promise.then(productos => setProductos(p));
   }, []);
 
+  console.log(productos);
+
   return (
     <Container>
-      <Alert className="mt-1 p-1 text-center" variant="warning">
-        {props.greeting}
-      </Alert>
-      <Row>
-        <ItemList productos={productos} />
-      </Row>
+      <ItemDetail productos={productos} productosId={5} />
     </Container>
   );
 }
 
-export default ItemListContainer;
+export default ItemDetailContainer;

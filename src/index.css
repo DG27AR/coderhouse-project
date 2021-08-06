@@ -24,6 +24,10 @@ font-family: 'Raleway', sans-serif;
   word-spacing: -1px;
 }
 
+.navBarFontSize {
+  font-size: 1.5rem;
+}
+
 .fontTitle {
   font-family: 'Raleway', sans-serif;
 }
