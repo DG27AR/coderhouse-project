@@ -4,23 +4,27 @@ import ItemDetail from './ItemDetail';
 import p from './productos';
 
 function ItemDetailContainer(props) {
-  const [productos, setProductos] = useState([]);
+  const [producto, setproducto] = useState([]);
+
+  const idProducto = 5;
 
   useEffect(() => {
     const promise = new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(productos);
+        resolve(producto);
       }, 2000);
     });
 
-    promise.then(productos => setProductos(p));
+    promise.then(producto => setproducto(p[idProducto]));
   }, []);
 
-  console.log(productos);
+  console.log('ItemDetailContainer:');
+  console.log(producto);
+  console.log(producto[idProducto]);
 
   return (
     <Container>
-      <ItemDetail productos={productos} productosId={5} />
+      <ItemDetail producto={producto} />
     </Container>
   );
 }
