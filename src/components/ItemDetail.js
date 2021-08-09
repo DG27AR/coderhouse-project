@@ -1,32 +1,40 @@
-import { Card } from 'react-bootstrap';
+import { Card, Row, Col } from 'react-bootstrap';
+import ItemCount from './ItemCount';
 function ItemDetail(props) {
-  // const n = props.productosId;
-  // const filterProductos = props.productos.filter((product, index) => index === n);
-
-  console.log('ItemDetail:');
-  console.log(props.producto);
-  // console.log(n);
+  const onAdd = function onAdd(contador) {
+    console.log(contador);
+  };
 
   return (
     <>
-      {/* {filterProductos.map(producto => {
-        return ( */}
-      <Card key={props.producto.id} className="mt-3">
-        <Card.Body className="p-0">
+      <Card className="mt-3">
+        <Row>
           <Card.Img src={props.producto.pictureURL} alt="Card image" />
           <Card.ImgOverlay className="p-0">
-            <Card.Title className="ps-1 fontTitle text-start text-light h4 bgPrimaryTransparent">
+            <Card.Title className="ps-3 fontTitle text-start text-light fs-3 bgPrimaryTransparent">
               {props.producto.nombre}
             </Card.Title>
           </Card.ImgOverlay>
-          <Card.Text className="text-end fs-5 mt-1">
-            <strong>{`U$S ${props.producto.precio}`}</strong>
-          </Card.Text>
-          <Card.Text>{props.producto.descripcion}</Card.Text>
-        </Card.Body>
+        </Row>
+        <Row className="mx-0 px-0">
+          <Col xs={12} md={6} lg={8}>
+            <Row className="mx-0 px-0">
+              <Card.Text className="text-start mx-0 px-0">Category </Card.Text>
+            </Row>
+            <Row className="mx-0 px-0">
+              <Card.Text className="text-start fs-3 mx-0 px-0">
+                <strong>{`Price U$S ${props.producto.precio}`}</strong>
+              </Card.Text>
+            </Row>
+          </Col>
+          <Col xs={12} md={6} lg={4} className="p-0">
+            <ItemCount initial={1} stock={5} onAdd={onAdd} />
+          </Col>
+        </Row>
+        <Row>
+          <Card.Text className="px-4 mt-4">{props.producto.descripcion}</Card.Text>
+        </Row>
       </Card>
-      {/* );
-      })} */}
     </>
   );
 }

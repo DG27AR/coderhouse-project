@@ -18,10 +18,6 @@ function ItemDetailContainer(props) {
     promise.then(producto => setproducto(p[idProducto]));
   }, []);
 
-  console.log('ItemDetailContainer:');
-  console.log(producto);
-  console.log(producto[idProducto]);
-
   return (
     <Container>
       <ItemDetail producto={producto} />

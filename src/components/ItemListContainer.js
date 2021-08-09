@@ -19,7 +19,7 @@ function ItemListContainer(props) {
   return (
     <Container>
       <Alert className="mt-1 p-1 text-center" variant="warning">
-        {props.greeting}
+        Are you sure to want to buy here??
       </Alert>
       <Row>
         <ItemList productos={productos} />

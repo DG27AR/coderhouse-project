@@ -3,8 +3,8 @@ import { FaShoppingCart } from 'react-icons/fa';
 function CartWidget(props) {
   return (
     <>
-      <FaShoppingCart className="text-light ms-3 me-1 navBarFontSize" />
-      <span>{props.q}</span>
+      <FaShoppingCart className="text-light ms-2 me-1 fs-5" />
+      <span className="me-2">{props.q}</span>
     </>
   );
 }
