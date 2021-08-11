@@ -33,9 +33,9 @@ const ItemCount = itemCount => {
     <Card className="mb-0 py-0 border-0">
       <Container className="p-0">
         <Row>
-          <Col className="text-start">
+          <Col xs={4} className="text-start">
             <Button
-              className="px-3"
+              className="px-1"
               variant="outline-primary"
               size="sm"
               onClick={() => setContador(restar(contador, 1))}
@@ -43,12 +43,12 @@ const ItemCount = itemCount => {
               <FaMinus />
             </Button>
           </Col>
-          <Col>
-            <Container className="text-center fs-5">{contador}</Container>
+          <Col xs={4} className="text-center fs-5">
+            {contador}
           </Col>
-          <Col className="text-end">
+          <Col xs={4} className="text-end">
             <Button
-              className="px-3"
+              className="px-1"
               variant="outline-primary"
               size="sm"
               onClick={() => setContador(sumar(contador, 1))}

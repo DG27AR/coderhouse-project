@@ -5,19 +5,23 @@ import MyLoader from './MyLoader';
 
 function ItemDetailContainer() {
   const [producto, setProducto] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState();
 
   const detailParams = useParams();
 
   useEffect(() => {
     setLoading(true);
-    setTimeout(() => {
-      fetch(`https://fakestoreapi.com/products/${detailParams.id}`)
-        .then(res => res.json())
-        .then(json => setProducto(json))
-        .catch(error => console.log(error));
-      setLoading(false);
-    }, 2000);
+    // setTimeout(() => {
+    fetch(`https://fakestoreapi.com/products/${detailParams.id}`)
+      .then(res => res.json())
+      .then(json => setProducto(json))
+      .finally(() => {
+        setTimeout(() => {
+          setLoading(false);
+        }, 2000);
+      })
+      .catch(error => console.log(error));
+    // }, 2000);
   }, [detailParams.id]);
 
   return <>{loading ? <MyLoader /> : <ItemDetail producto={producto} />}</>;

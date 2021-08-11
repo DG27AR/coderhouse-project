@@ -11,17 +11,21 @@ function ItemListContainer() {
 
   useEffect(() => {
     setLoading(true);
-    setTimeout(function () {
-      fetch(
-        listParams.id
-          ? `https://fakestoreapi.com/products/category/${listParams.id}`
-          : 'https://fakestoreapi.com/products/'
-      )
-        .then(res => res.json())
-        .then(json => setProductos(json))
-        .catch(error => console.log(error));
-      setLoading(false);
-    }, 2000);
+    // setTimeout(function () {
+    fetch(
+      listParams.id
+        ? `https://fakestoreapi.com/products/category/${listParams.id}`
+        : 'https://fakestoreapi.com/products/'
+    )
+      .then(res => res.json())
+      .then(json => setProductos(json))
+      .finally(() => {
+        setTimeout(() => {
+          setLoading(false);
+        }, 2000);
+      })
+      .catch(error => console.log(error));
+    // }, 2000);
   }, [listParams.id]);
 
   return <>{loading ? <MyLoader /> : <ItemList productos={productos} />}</>;

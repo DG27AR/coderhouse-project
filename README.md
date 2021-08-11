@@ -34,5 +34,3 @@ Por ultimo, se utilizo tema de Bootstrap custom desde [Bootswacth](https://boots
 - [react-router-dom](https://reactrouter.com/)
 - [react-bootstrap](https://react-bootstrap.netlify.app/)
 - [react-router-bootstrap](https://github.com/react-bootstrap/react-router-bootstrap/)
-
-### End
