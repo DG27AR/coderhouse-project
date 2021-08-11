@@ -1,31 +1,30 @@
 import { useState, useEffect } from 'react';
-import { Container, Alert, Row } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
 import ItemList from './ItemList';
-import p from './productos';
+import MyLoader from './MyLoader';
 
-function ItemListContainer(props) {
+function ItemListContainer() {
   const [productos, setProductos] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const listParams = useParams();
 
   useEffect(() => {
-    const promise = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(productos);
-      }, 2000);
-    });
+    setLoading(true);
+    setTimeout(function () {
+      fetch(
+        listParams.id
+          ? `https://fakestoreapi.com/products/category/${listParams.id}`
+          : 'https://fakestoreapi.com/products/'
+      )
+        .then(res => res.json())
+        .then(json => setProductos(json))
+        .catch(error => console.log(error));
+      setLoading(false);
+    }, 2000);
+  }, [listParams.id]);
 
-    promise.then(productos => setProductos(p));
-  }, []);
-
-  return (
-    <Container>
-      <Alert className="mt-1 p-1 text-center" variant="warning">
-        Are you sure to want to buy here??
-      </Alert>
-      <Row>
-        <ItemList productos={productos} />
-      </Row>
-    </Container>
-  );
+  return <>{loading ? <MyLoader /> : <ItemList productos={productos} />}</>;
 }
 
 export default ItemListContainer;

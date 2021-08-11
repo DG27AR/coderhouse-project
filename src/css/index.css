@@ -16,6 +16,11 @@ font-family: 'Raleway', sans-serif;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   color: #697477;
+  background-color: rgb(243, 243, 243);
+}
+
+.bg-card-footer-custom {
+  background-color: darkred;
 }
 
 .fontLogo {
@@ -36,50 +41,16 @@ font-family: 'Raleway', sans-serif;
   background-color: rgb(252, 252, 252);
 }
 
-.bgPrimaryTransparent {
-  background-color: rgba(41, 45, 47, 0.5);
+.spinner {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.125);
 }
-/*
-.colorLighterBlue {
-  color: #b7defa;
-}
-
-.colorBlue {
-  color: #1192ee;
-}
-
-.colorLightYellow {
-  color: #ffdb9e;
-}
-
-.colorGray {
-  color: #697477;
-}
-
-.colorLightGrey {
-  color: #dcdcdc;
-}
-
-.bgDarkBlue {
-  background-color: #052c48;
-}
-
-.bgMediumBlue {
-  background-color: #0c66a6;
-}
-
-.bgBlue {
-  background-color: #1192ee;
-}
-
-.bgLightGrey {
-  background-color: #dcdcdc;
-}
-
-.bgYellow {
-  background-color: rgb(217, 255, 51);
-}
-
-.btn-yellow {
-  background-color: rgb(217, 255, 51);
-} */

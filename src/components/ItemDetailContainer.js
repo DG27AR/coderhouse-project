@@ -1,28 +1,26 @@
 import { useState, useEffect } from 'react';
-import { Container } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
 import ItemDetail from './ItemDetail';
-import p from './productos';
+import MyLoader from './MyLoader';
 
-function ItemDetailContainer(props) {
-  const [producto, setproducto] = useState([]);
+function ItemDetailContainer() {
+  const [producto, setProducto] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const idProducto = 5;
+  const detailParams = useParams();
 
   useEffect(() => {
-    const promise = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(producto);
-      }, 2000);
-    });
+    setLoading(true);
+    setTimeout(() => {
+      fetch(`https://fakestoreapi.com/products/${detailParams.id}`)
+        .then(res => res.json())
+        .then(json => setProducto(json))
+        .catch(error => console.log(error));
+      setLoading(false);
+    }, 2000);
+  }, [detailParams.id]);
 
-    promise.then(producto => setproducto(p[idProducto]));
-  }, []);
-
-  return (
-    <Container>
-      <ItemDetail producto={producto} />
-    </Container>
-  );
+  return <>{loading ? <MyLoader /> : <ItemDetail producto={producto} />}</>;
 }
 
 export default ItemDetailContainer;

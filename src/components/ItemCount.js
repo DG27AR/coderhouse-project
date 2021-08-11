@@ -30,42 +30,40 @@ const ItemCount = itemCount => {
   };
 
   return (
-    <>
-      <Card className="mb-0 py-0">
-        <Container className="bgPrimary p-0">
-          <Row>
-            <Col className="text-start">
-              <Button
-                className="px-3 rounded-0"
-                variant="outline-secondary"
-                size="sm"
-                onClick={() => setContador(restar(contador, 1))}
-              >
-                <FaMinus />
-              </Button>
-            </Col>
-            <Col>
-              <Container className="text-center fs-5">{contador}</Container>
-            </Col>
-            <Col className="text-end">
-              <Button
-                className="px-3 rounded-0"
-                variant="outline-secondary"
-                size="sm"
-                onClick={() => setContador(sumar(contador, 1))}
-              >
-                <FaPlus />
-              </Button>
-            </Col>
-          </Row>
-          <Row className="my-0 mx-0">
-            <Button className="rounded-0" variant="primary" size="sm" onClick={() => itemCount.onAdd(contador)}>
-              Add to the cart <FaCartPlus />
+    <Card className="mb-0 py-0 border-0">
+      <Container className="p-0">
+        <Row>
+          <Col className="text-start">
+            <Button
+              className="px-3"
+              variant="outline-primary"
+              size="sm"
+              onClick={() => setContador(restar(contador, 1))}
+            >
+              <FaMinus />
             </Button>
-          </Row>
-        </Container>
-      </Card>
-    </>
+          </Col>
+          <Col>
+            <Container className="text-center fs-5">{contador}</Container>
+          </Col>
+          <Col className="text-end">
+            <Button
+              className="px-3"
+              variant="outline-primary"
+              size="sm"
+              onClick={() => setContador(sumar(contador, 1))}
+            >
+              <FaPlus />
+            </Button>
+          </Col>
+        </Row>
+        <Row className="my-0 mx-0">
+          <Button className="mt-1" variant="primary" size="sm" onClick={() => itemCount.onAdd(contador)}>
+            Add to the cart <FaCartPlus />
+          </Button>
+        </Row>
+      </Container>
+    </Card>
   );
 };
 

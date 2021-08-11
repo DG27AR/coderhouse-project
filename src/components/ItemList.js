@@ -1,23 +1,23 @@
-import { Col } from 'react-bootstrap';
-import ItemCount from './ItemCount';
+import { Col, CardGroup, Container } from 'react-bootstrap';
 import Item from './Item';
 
 function ItemList(props) {
-  const onAdd = function onAdd(contador) {
-    console.log(contador);
-  };
+  // const onAdd = function onAdd(contador) {
+  //   console.log(contador);
+  // };
 
   return (
-    <>
-      {props.productos.map(producto => {
-        return (
-          <Col key={producto.id} xs={12} md={6} lg={4}>
-            <Item producto={producto} />
-            <ItemCount initial={1} stock={5} onAdd={onAdd} />
-          </Col>
-        );
-      })}
-    </>
+    <Container>
+      <CardGroup>
+        {props.productos.map(producto => {
+          return (
+            <Col key={producto.id} xs={12} md={6} lg={4} className="p-2">
+              <Item producto={producto} />
+            </Col>
+          );
+        })}
+      </CardGroup>
+    </Container>
   );
 }
 
