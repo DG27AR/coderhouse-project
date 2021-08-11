@@ -1,4 +1,4 @@
-#Proyecto React E-Commerce
+# Proyecto React E-Commerce
 
 Proyecto realizado para el curso de CoderHouse de React, camada 14680.
 
@@ -35,4 +35,4 @@ Por ultimo, se utilizo tema de Bootstrap custom desde [Bootswacth](https://boots
 - [react-bootstrap](https://react-bootstrap.netlify.app/)
 - [react-router-bootstrap](https://github.com/react-bootstrap/react-router-bootstrap/)
 
-###End
+### End
