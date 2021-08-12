@@ -1,11 +1,15 @@
-import { Card, Row, Col, Badge, Container } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Card, Row, Col, Badge, Container, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import ItemCount from './ItemCount';
 import { FaStar } from 'react-icons/fa';
 
 function ItemDetail(props) {
-  const onAdd = function onAdd(contador) {
-    console.log(contador);
+  const [cartHasProducts, setCartHasProducts] = useState(0);
+
+  const onAdd = function onAdd(q) {
+    console.log(`${q} unidades del proudcto al carrito`);
+    setCartHasProducts(q);
   };
 
   return (
@@ -37,7 +41,17 @@ function ItemDetail(props) {
                   <Card.Text className="fs-4 fw-bold">{`U$S ${props.producto.price}`}</Card.Text>
                 </Card.Body>
                 <Card.Footer className="bg-light border-0">
-                  <ItemCount initial={1} stock={5} onAdd={onAdd} />
+                  <Card.Text className="fs-6 mb-1 text-start fst-italic">{`Stock: ${props.producto.stock} unidades`}</Card.Text>
+
+                  {cartHasProducts ? (
+                    <Link to="/cart">
+                      <Button className="w-100" variant="primary" size="lg">
+                        Go to the Cart!
+                      </Button>
+                    </Link>
+                  ) : (
+                    <ItemCount initial={props.producto.stock > 0 ? 1 : 0} stock={props.producto.stock} onAdd={onAdd} />
+                  )}
                 </Card.Footer>
               </Card>
             </Col>

@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { Container, Card, Row, Col, Button } from 'react-bootstrap';
 import { FaPlus, FaMinus, FaCartPlus } from 'react-icons/fa';
 
-const ItemCount = itemCount => {
-  const [contador, setContador] = useState(itemCount.initial);
+const ItemCount = props => {
+  const [contador, setContador] = useState(props.initial);
 
   const sumar = function sumar(numero, valor) {
-    if (numero > 0 && hayStock(numero, itemCount.stock)) {
+    if (numero > 0 && hayStock(numero, props.stock)) {
       numero = numero + valor;
     }
 
@@ -58,7 +58,7 @@ const ItemCount = itemCount => {
           </Col>
         </Row>
         <Row className="my-0 mx-0">
-          <Button className="mt-1" variant="primary" size="sm" onClick={() => itemCount.onAdd(contador)}>
+          <Button className="mt-1" variant="primary" size="sm" onClick={() => props.onAdd(contador)}>
             Add to the cart <FaCartPlus />
           </Button>
         </Row>

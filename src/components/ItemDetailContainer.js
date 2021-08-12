@@ -24,6 +24,8 @@ function ItemDetailContainer() {
     // }, 2000);
   }, [detailParams.id]);
 
+  producto.stock = 5;
+
   return <>{loading ? <MyLoader /> : <ItemDetail producto={producto} />}</>;
 }
 

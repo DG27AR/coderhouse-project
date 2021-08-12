@@ -4,7 +4,7 @@ import ItemList from './ItemList';
 import MyLoader from './MyLoader';
 
 function ItemListContainer() {
-  const [productos, setProductos] = useState([]);
+  let [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const listParams = useParams();
@@ -28,6 +28,16 @@ function ItemListContainer() {
     // }, 2000);
   }, [listParams.id]);
 
+  function addStock(p) {
+    p.forEach(e => {
+      e.stock = 5;
+    });
+
+    return p;
+  }
+  productos = addStock(productos);
+
+  console.log(productos);
   return <>{loading ? <MyLoader /> : <ItemList productos={productos} />}</>;
 }
 
