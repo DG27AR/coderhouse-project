@@ -11,7 +11,6 @@ function ItemListContainer() {
 
   useEffect(() => {
     setLoading(true);
-    // setTimeout(function () {
     fetch(
       listParams.id
         ? `https://fakestoreapi.com/products/category/${listParams.id}`
@@ -25,7 +24,6 @@ function ItemListContainer() {
         }, 2000);
       })
       .catch(error => console.log(error));
-    // }, 2000);
   }, [listParams.id]);
 
   function addStock(p) {
@@ -37,7 +35,6 @@ function ItemListContainer() {
   }
   productos = addStock(productos);
 
-  console.log(productos);
   return <>{loading ? <MyLoader /> : <ItemList productos={productos} />}</>;
 }
 

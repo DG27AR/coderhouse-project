@@ -11,7 +11,6 @@ function ItemDetailContainer() {
 
   useEffect(() => {
     setLoading(true);
-    // setTimeout(() => {
     fetch(`https://fakestoreapi.com/products/${detailParams.id}`)
       .then(res => res.json())
       .then(json => setProducto(json))
@@ -21,7 +20,6 @@ function ItemDetailContainer() {
         }, 2000);
       })
       .catch(error => console.log(error));
-    // }, 2000);
   }, [detailParams.id]);
 
   producto.stock = 5;

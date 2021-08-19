@@ -1,15 +1,19 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { Card, Row, Col, Badge, Container, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import ItemCount from './ItemCount';
 import { FaStar } from 'react-icons/fa';
+import Context from '../contexts/Context';
 
 function ItemDetail(props) {
-  const [cartHasProducts, setCartHasProducts] = useState(0);
+  let context = useContext(Context);
+
+  function idInCart(i, cart) {
+    return cart.filter(cartItem => cartItem.id === i).length !== 0;
+  }
 
   const onAdd = function onAdd(q) {
-    console.log(`${q} unidades del proudcto al carrito`);
-    setCartHasProducts(q);
+    context.addItem(props.producto.id, q);
   };
 
   return (
@@ -43,12 +47,22 @@ function ItemDetail(props) {
                 <Card.Footer className="bg-light border-0">
                   <Card.Text className="fs-6 mb-1 text-start fst-italic">{`Stock: ${props.producto.stock} unidades`}</Card.Text>
 
-                  {cartHasProducts ? (
-                    <Link to="/cart">
-                      <Button className="w-100" variant="primary" size="lg">
-                        Go to the Cart!
+                  {idInCart(props.producto.id, context.items) ? (
+                    <>
+                      <Link to="/cart">
+                        <Button className="w-100 mb-2" variant="primary" size="sm">
+                          Go to the Cart!
+                        </Button>
+                      </Link>
+                      <Button
+                        className="w-100"
+                        variant="outline-primary"
+                        size="sm"
+                        onClick={() => context.removeItem(props.producto.id)}
+                      >
+                        Remove product
                       </Button>
-                    </Link>
+                    </>
                   ) : (
                     <ItemCount initial={props.producto.stock > 0 ? 1 : 0} stock={props.producto.stock} onAdd={onAdd} />
                   )}
