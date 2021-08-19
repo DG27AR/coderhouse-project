@@ -8,10 +8,6 @@ import Context from '../contexts/Context';
 function ItemDetail(props) {
   let context = useContext(Context);
 
-  function idInCart(i, cart) {
-    return cart.filter(cartItem => cartItem.id === i).length !== 0;
-  }
-
   const onAdd = function onAdd(q) {
     context.addItem(props.producto.id, q);
   };
@@ -47,7 +43,7 @@ function ItemDetail(props) {
                     <small>{`Quedan ${props.producto.stock} unidades`}</small>
                   </Card.Text>
 
-                  {idInCart(props.producto.id, context.items) ? (
+                  {context.isInCart(props.producto.id) ? (
                     <>
                       <Link to="/cart">
                         <Button className="w-100 rounded-0 mb-2" variant="primary" size="sm">

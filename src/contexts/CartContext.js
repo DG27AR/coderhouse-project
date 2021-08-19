@@ -5,6 +5,7 @@ const CartContext = ({ children }) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
+    console.log(`Items dentro del context:`);
     console.log(items);
   }, [items]);
 
@@ -23,8 +24,11 @@ const CartContext = ({ children }) => {
     setItems([]);
     console.log(`Se quitaron TODOS productos`);
   }
+  function isInCart(i) {
+    return items.find(item => item.id === i);
+  }
 
-  return <Provider value={{ items, setItems, addItem, removeItem, clear }}>{children}</Provider>;
+  return <Provider value={{ items, setItems, addItem, removeItem, clear, isInCart }}>{children}</Provider>;
 };
 
 export default CartContext;
