@@ -4,8 +4,8 @@ import { LinkContainer } from 'react-router-bootstrap';
 
 const CategoryWidget = props => {
   return (
-    <Dropdown className="d-inline-block text-light mx-2" align="end">
-      <Dropdown.Toggle variant="primary" id="dropdown-basic">
+    <Dropdown className="d-inline-block text-light mx-0">
+      <Dropdown.Toggle className="rounded-0 border-0 text-light" variant="outline-dark" id="dropdown-basic">
         <span>
           <FaFilter className="me-1" />
         </span>
@@ -21,21 +21,6 @@ const CategoryWidget = props => {
             </LinkContainer>
           );
         })}
-        {/* <LinkContainer to="/category/electronics">
-          <Dropdown.Item>Electronics</Dropdown.Item>
-        </LinkContainer>
-        <LinkContainer to="/category/jewelery">
-          <Dropdown.Item>Jewelery</Dropdown.Item>
-        </LinkContainer>
-        <LinkContainer to="/category/electronics">
-          <Dropdown.Item>Electronics</Dropdown.Item>
-        </LinkContainer>
-        <LinkContainer to="/category/electronics">
-          <Dropdown.Item>Electronics</Dropdown.Item>
-        </LinkContainer>
-        <LinkContainer to="/category/electronics">
-          <Dropdown.Item>Electronics</Dropdown.Item>
-        </LinkContainer> */}
       </Dropdown.Menu>
     </Dropdown>
   );

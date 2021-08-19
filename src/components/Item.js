@@ -22,7 +22,7 @@ function Item(props) {
             </span>
             <Link to={`/category/${props.producto.category}`}>
               <h6>
-                <Badge pill className="bg-primary rounded-pill mb-1 text-uppercase">
+                <Badge pill className="bg-primary rounded-0 mb-1 text-uppercase">
                   {props.producto.category}
                 </Badge>
               </h6>
@@ -35,14 +35,14 @@ function Item(props) {
       </Card.Body>
       <Card.Footer className="fs-5 pt-0 fontTitle border-0 rounded-0 bg-secondary">
         <Row className="mt-2">
-          <Col xs={6}>
+          <Col xs={3} className="text-center">
             <LinkContainer to={`/item/${props.producto.id}`}>
-              <Button variant="outline-secondary" size="sm">
+              <Button variant="outline-secondary" size="sm" className="rounded-0 h-100">
                 <span className="text-center">Details</span>
               </Button>
             </LinkContainer>
           </Col>
-          <Col xs={6} className="text-end text-dark">{`U$S ${props.producto.price}`}</Col>
+          <Col xs={9} className="text-end text-dark">{`U$S ${props.producto.price}`}</Col>
         </Row>
       </Card.Footer>
     </Card>

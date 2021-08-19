@@ -32,33 +32,23 @@ const ItemCount = props => {
   return (
     <Card className="mb-0 py-0 border-0">
       <Container className="p-0">
-        <Row>
+        <Row className="border border-dark mx-0 bg-dark">
           <Col xs={4} className="text-start">
-            <Button
-              className="px-1"
-              variant="outline-primary"
-              size="sm"
-              onClick={() => setContador(restar(contador, 1))}
-            >
+            <Button className="p-0 border-0" variant="dark" size="sm" onClick={() => setContador(restar(contador, 1))}>
               <FaMinus />
             </Button>
           </Col>
-          <Col xs={4} className="text-center fs-5">
+          <Col xs={4} className="text-center text-light fs-6 mt-1">
             {contador}
           </Col>
           <Col xs={4} className="text-end">
-            <Button
-              className="px-1"
-              variant="outline-primary"
-              size="sm"
-              onClick={() => setContador(sumar(contador, 1))}
-            >
+            <Button className="p-0 border-0" variant="dark" size="sm" onClick={() => setContador(sumar(contador, 1))}>
               <FaPlus />
             </Button>
           </Col>
         </Row>
         <Row className="my-0 mx-0">
-          <Button className="mt-1" variant="primary" size="sm" onClick={() => props.onAdd(contador)}>
+          <Button className="mt-1 rounded-0" variant="primary" size="sm" onClick={() => props.onAdd(contador)}>
             Add to the cart <FaCartPlus />
           </Button>
         </Row>

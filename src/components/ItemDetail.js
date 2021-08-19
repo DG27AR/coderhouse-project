@@ -36,26 +36,26 @@ function ItemDetail(props) {
                       <FaStar className="fs-6 text-secondary" />
                     </span>
                     <h6>
-                      <Badge pill className="bg-primary rounded-pill text-uppercase">
-                        {props.producto.category}
-                      </Badge>
+                      <Badge className="bg-primary rounded-0 text-uppercase">{props.producto.category}</Badge>
                     </h6>
                   </Link>
                   <Card.Title>{props.producto.title}</Card.Title>
                   <Card.Text className="fs-4 fw-bold">{`U$S ${props.producto.price}`}</Card.Text>
                 </Card.Body>
                 <Card.Footer className="bg-light border-0">
-                  <Card.Text className="fs-6 mb-1 text-start fst-italic">{`Stock: ${props.producto.stock} unidades`}</Card.Text>
+                  <Card.Text className="fs-6 mb-1 text-start fst-italic">
+                    <small>{`Quedan ${props.producto.stock} unidades`}</small>
+                  </Card.Text>
 
                   {idInCart(props.producto.id, context.items) ? (
                     <>
                       <Link to="/cart">
-                        <Button className="w-100 mb-2" variant="primary" size="sm">
+                        <Button className="w-100 rounded-0 mb-2" variant="primary" size="sm">
                           Go to the Cart!
                         </Button>
                       </Link>
                       <Button
-                        className="w-100"
+                        className="w-100 rounded-o"
                         variant="outline-primary"
                         size="sm"
                         onClick={() => context.removeItem(props.producto.id)}
