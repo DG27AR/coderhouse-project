@@ -32,17 +32,27 @@ const ItemCount = props => {
   return (
     <Card className="mb-0 py-0 border-0">
       <Container className="p-0">
-        <Row className="border border-dark mx-0 bg-dark">
+        <Row className="border border-grey mx-0 bg-secondary">
           <Col xs={4} className="text-start">
-            <Button className="p-0 border-0" variant="dark" size="sm" onClick={() => setContador(restar(contador, 1))}>
+            <Button
+              className="p-0 border-0 plus-minus-button"
+              variant="white"
+              size="sm"
+              onClick={() => setContador(restar(contador, 1))}
+            >
               <FaMinus />
             </Button>
           </Col>
-          <Col xs={4} className="text-center text-light fs-6 mt-1">
+          <Col xs={4} className="text-center text-dark fs-6 mt-1">
             {contador}
           </Col>
           <Col xs={4} className="text-end">
-            <Button className="p-0 border-0" variant="dark" size="sm" onClick={() => setContador(sumar(contador, 1))}>
+            <Button
+              className="p-0 border-0 plus-minus-button"
+              variant="white"
+              size="sm"
+              onClick={() => setContador(sumar(contador, 1))}
+            >
               <FaPlus />
             </Button>
           </Col>

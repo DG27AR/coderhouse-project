@@ -35,14 +35,16 @@ function Item(props) {
       </Card.Body>
       <Card.Footer className="fs-5 pt-0 fontTitle border-0 rounded-0 bg-secondary">
         <Row className="mt-2">
-          <Col xs={3} className="text-center">
+          <Col xs={6} className="text-start">
             <LinkContainer to={`/item/${props.producto.id}`}>
-              <Button variant="outline-secondary" size="sm" className="rounded-0 h-100">
-                <span className="text-center">Details</span>
+              <Button variant="outline-secondary" size="sm" className=" border-0 rounded-0 h-100">
+                <span className="text-center">
+                  <small>More info?</small>
+                </span>
               </Button>
             </LinkContainer>
           </Col>
-          <Col xs={9} className="text-end text-dark">{`U$S ${props.producto.price}`}</Col>
+          <Col xs={6} className="text-end text-dark">{`U$S ${props.producto.price}`}</Col>
         </Row>
       </Card.Footer>
     </Card>

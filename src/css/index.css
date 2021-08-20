@@ -1,15 +1,7 @@
 /* Fuentes
-Logo
-font-family: 'Gochi Hand', cursive;
-font-family: 'Oswald', sans-serif;
-Pagina en general
 font-family: 'Open Sans', sans-serif;
 Titulos
 font-family: 'Raleway', sans-serif;
-*/
-
-/* Colores
-
 */
 
 .reboot {
@@ -17,10 +9,6 @@ font-family: 'Raleway', sans-serif;
   font-size: 16px;
   color: #697477;
   background-color: rgb(243, 243, 243);
-}
-
-.bg-card-footer-custom {
-  background-color: darkred;
 }
 
 .fontLogo {
@@ -53,4 +41,18 @@ font-family: 'Raleway', sans-serif;
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.125);
+}
+
+.plus-minus-button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.bg-grey {
+  background-color: whitesmoke;
+}
+
+.border-custom {
+  border-color: lightgray;
+  color: gray;
 }
