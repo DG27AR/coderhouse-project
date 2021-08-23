@@ -9,7 +9,15 @@ function ItemDetail(props) {
   let context = useContext(Context);
 
   const onAdd = function onAdd(q) {
-    context.addItem(props.producto.id, q);
+    context.addItem(
+      props.producto.id,
+      q,
+      props.producto.title,
+      props.producto.price,
+      props.producto.description,
+      props.producto.image,
+      props.producto.category
+    );
   };
 
   return (
@@ -36,18 +44,18 @@ function ItemDetail(props) {
                     </h6>
                   </Link>
                   <Card.Title>{props.producto.title}</Card.Title>
-                  <Card.Text>
+                  <Container className="m-0 p-0">
                     <div className="fs-4 fw-bold">{`U$S ${props.producto.price}`}</div>
                     <div className="fs-6 m-0 p-0 text-start fst-italic">
                       <small>{`${props.producto.stock} units left!`}</small>
                     </div>
-                  </Card.Text>
+                  </Container>
                 </Card.Body>
                 <Card.Footer className="bg-light border-0">
                   {context.isInCart(props.producto.id) ? (
                     <Row>
                       <Col xs={12} lg={6} className="mb-2">
-                        <Link to="/cart">
+                        <Link to="/cart/cart">
                           <Button className="w-100 rounded-0" variant="outline-primary" size="sm">
                             To the cart!
                             <FaShoppingCart className="ms-1" />
@@ -56,7 +64,7 @@ function ItemDetail(props) {
                       </Col>
                       <Col xs={12} lg={6} className="mb-2">
                         <Button
-                          className="w-100 rounded-0 border-custom"
+                          className="w-100 rounded-0 button-custom"
                           variant="outline-secondary"
                           size="sm"
                           onClick={() => context.removeItem(props.producto.id)}

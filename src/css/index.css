@@ -9,6 +9,7 @@ font-family: 'Raleway', sans-serif;
   font-size: 16px;
   color: #697477;
   background-color: rgb(243, 243, 243);
+  min-height: 100vh;
 }
 
 .fontLogo {
@@ -48,11 +49,16 @@ font-family: 'Raleway', sans-serif;
   box-shadow: none;
 }
 
-.bg-grey {
-  background-color: whitesmoke;
-}
-
-.border-custom {
+.button-custom {
   border-color: lightgray;
   color: gray;
+}
+
+.bg-cart-card-footer {
+  background-color: rgb(243, 243, 243);
+}
+
+.ok-color {
+  border-color: teal;
+  color: teal;
 }

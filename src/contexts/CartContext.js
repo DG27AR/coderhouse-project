@@ -9,9 +9,12 @@ const CartContext = ({ children }) => {
     console.log(items);
   }, [items]);
 
-  function addItem(id, q) {
+  function addItem(id, q, title, price, description, image, category) {
     // Agregar Items, en ItemDetail detecta si ya estaba el producto
-    setItems([...items, { id: id, q: q }]);
+    setItems([
+      ...items,
+      { id: id, q: q, title: title, price: price, description: description, image: image, category: category },
+    ]);
     console.log(`Se agregaron ${q} productos del id ${id}`);
   }
   function removeItem(id) {
