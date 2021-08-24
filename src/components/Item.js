@@ -2,9 +2,12 @@ import { Card, Row, Col, Badge, Button } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Link, useParams } from 'react-router-dom';
 import { FaStar, FaTrashAlt } from 'react-icons/fa';
+import { useContext } from 'react';
+import Context from '../contexts/Context';
 
 function Item(props) {
   const itemParams = useParams();
+  const context = useContext(Context);
 
   return (
     <Card className="h-100 rounded-0 border-2 border-secondary shadow">
@@ -70,7 +73,12 @@ function Item(props) {
         ) : (
           <Row className="mx-1 my-2 pb-2 bg-cart-card-footer shadow px-2 pt-1">
             <span className="fs-6 text-end px-0">
-              <Button className="pb-1 pt-0 pe-1 ps-0 mt-1 me-0 border-0 rounded-0" size="sm" variant="outline-primary">
+              <Button
+                className="pb-1 pt-0 pe-1 ps-0 mt-1 me-0 border-0 rounded-0"
+                size="sm"
+                variant="outline-primary"
+                onClick={() => context.removeItem(props.producto.id)}
+              >
                 <FaTrashAlt className="ms-1" />
               </Button>
             </span>

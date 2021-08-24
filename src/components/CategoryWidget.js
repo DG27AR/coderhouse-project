@@ -4,7 +4,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 
 const CategoryWidget = props => {
   return (
-    <Dropdown className="d-inline-block text-light mx-0">
+    <Dropdown className="d-inline-block text-light mx-2">
       <Dropdown.Toggle className="rounded-0 border-0 text-light" variant="outline-dark" id="dropdown-basic">
         <span>
           <FaFilter className="me-1" />

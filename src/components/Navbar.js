@@ -32,8 +32,8 @@ function MyNavbar() {
           <span className="fontLogo text-white align-top navBarFontSize">MY STORE</span>
         </Navbar.Brand>
         <span className="me-2">
+          <CartWidget />
           <CategoryWidget categories={categories} />
-          <CartWidget q={0} />
           <InfoWidget />
         </span>
       </Container>

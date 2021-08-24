@@ -54,6 +54,11 @@ font-family: 'Raleway', sans-serif;
   color: gray;
 }
 
+.disabled-custom {
+  background-color: darkgrey;
+  border-color: darkgrey;
+}
+
 .bg-cart-card-footer {
   background-color: rgb(243, 243, 243);
 }
