@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemList from './ItemList';
 import MyLoader from './MyLoader';
+import { firestore } from '../firebase';
 
 function ItemListContainer() {
   let [productos, setProductos] = useState([]);
@@ -11,29 +12,25 @@ function ItemListContainer() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(
-      listParams.id
-        ? `https://fakestoreapi.com/products/category/${listParams.id}`
-        : 'https://fakestoreapi.com/products/'
-    )
-      .then(res => res.json())
-      .then(json => setProductos(json))
-      .finally(() => {
-        setTimeout(() => {
-          setLoading(false);
-        }, 2000);
+
+    const filtro = listParams.id
+      ? firestore.collection('items').where('category', '==', listParams.id)
+      : firestore.collection('items');
+
+    filtro
+      .get()
+      .then(resultados => {
+        const resultadoFinal = [];
+        resultados.forEach(resultado => {
+          const id = resultado.id;
+          const dataFinal = { id, ...resultado.data() };
+          resultadoFinal.push(dataFinal);
+          return resultadoFinal;
+        });
+        setProductos(resultadoFinal);
       })
-      .catch(error => console.log(error));
+      .finally(() => setLoading(false));
   }, [listParams.id]);
-
-  function addStock(p) {
-    p.forEach(e => {
-      e.stock = 5;
-    });
-
-    return p;
-  }
-  productos = addStock(productos);
 
   return <>{loading ? <MyLoader /> : <ItemList productos={productos} />}</>;
 }

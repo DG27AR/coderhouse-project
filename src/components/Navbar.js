@@ -5,16 +5,24 @@ import CartWidget from './CartWidget';
 import InfoWidget from './InfoWidget';
 import CategoryWidget from './CategoryWidget';
 import { Link } from 'react-router-dom';
+import { firestore } from '../firebase';
 
 function MyNavbar() {
   const [categories, setCategories] = useState([]);
   useEffect(() => {
-    setTimeout(() => {
-      fetch('https://fakestoreapi.com/products/categories')
-        .then(res => res.json())
-        .then(json => setCategories(json))
-        .catch(error => console.log(error));
-    }, 2000);
+    firestore
+      .collection('categorys')
+      .get()
+      .then(resultados => {
+        const resultadoFinal = [];
+        resultados.forEach(resultado => {
+          const id = resultado.id;
+          const dataFinal = { id, ...resultado.data() };
+          resultadoFinal.push(dataFinal);
+          return resultadoFinal;
+        });
+        setCategories(resultadoFinal);
+      });
   }, []);
   return (
     <Navbar bg="dark" variant="dark" expand="lg" className="sticky-top py-0">

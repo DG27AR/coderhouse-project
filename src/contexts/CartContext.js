@@ -22,7 +22,7 @@ const CartContext = ({ children }) => {
   }, [items]);
 
   function addItem(id, q, title, price, description, image, category) {
-    // Agregar Items, en ItemDetail detecta si ya estaba el producto
+    // Agregar Items
     setItems([
       ...items,
       { id: id, q: q, title: title, price: price, description: description, image: image, category: category },

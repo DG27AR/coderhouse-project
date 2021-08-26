@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from './ItemDetail';
 import MyLoader from './MyLoader';
+import { firestore } from '../firebase';
 
 function ItemDetailContainer() {
   const [producto, setProducto] = useState([]);
@@ -11,18 +12,18 @@ function ItemDetailContainer() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`https://fakestoreapi.com/products/${detailParams.id}`)
-      .then(res => res.json())
-      .then(json => setProducto(json))
-      .finally(() => {
-        setTimeout(() => {
-          setLoading(false);
-        }, 2000);
-      })
-      .catch(error => console.log(error));
-  }, [detailParams.id]);
 
-  producto.stock = 5;
+    firestore
+      .collection('items')
+      .doc(detailParams.id)
+      .get()
+      .then(resultado => {
+        const id = resultado.id;
+        const dataFinal = { id, ...resultado.data() };
+        setProducto(dataFinal);
+      })
+      .finally(() => setLoading(false));
+  }, [detailParams.id]);
 
   return <>{loading ? <MyLoader /> : <ItemDetail producto={producto} />}</>;
 }
