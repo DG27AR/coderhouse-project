@@ -1,12 +1,32 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Container, Col, Card, CardGroup, Button, Row } from 'react-bootstrap';
-import { FaTrashAlt } from 'react-icons/fa';
+import { FaArrowCircleRight, FaTrashAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Context from '../contexts/Context';
 import Item from './Item';
+import { firestore } from '../firebase';
 
 const Cart = () => {
   let context = useContext(Context);
+  let [showOrder, setShowOrder] = useState(0);
+
+  useEffect(() => {
+    if (showOrder) {
+      console.log(`El numero de orden es: ${showOrder}`);
+      context.clear();
+    }
+  }, [showOrder]);
+
+  function handleBuy(cart) {
+    const buyerData = { name: 'Buyer', mail: 'buyer@buyer', phone: '000000000' };
+    let theId = 0;
+    firestore
+      .collection('orders')
+      .add({ buyerData, cart })
+      .then(res => setShowOrder(res.id));
+
+    return theId;
+  }
 
   if (context.totalQ) {
     return (
@@ -20,7 +40,7 @@ const Cart = () => {
           <Col xs={12} xl={4}>
             <Card className="rounded-0 shadow p-2 mt-2 mx-2 pb-2 disabled-custom">
               <Card.Text className="fw-bold text-start ms-2 pt-1 h6">
-                <small>2. ADDRESS INFO</small>
+                <small>2. YOUR INFO</small>
               </Card.Text>
             </Card>
           </Col>
@@ -62,9 +82,35 @@ const Cart = () => {
                 <Card.Text className="fontTitle fs-4">{context.totalPrice}</Card.Text>
                 <Card.Text>{`${context.totalQ} units`}</Card.Text>
               </Card.Body>
+              <Card.Footer className="fs-5 pt-0 border-0 rounded-0 bg-secondary">
+                <Row className="mx-1 my-2 pb-2 bg-cart-card-footer shadow px-2 pt-1">
+                  <span className="fs-6 text-end px-0">
+                    <Button
+                      className="pb-1 pt-0 pe-1 ps-0 mt-1 me-0 border-0 rounded-pill"
+                      size="sm"
+                      variant="outline-primary"
+                      onClick={() => handleBuy(context.items)}
+                    >
+                      <span className="ms-2 me-1">
+                        My order is Ok, take me to the next step
+                        <FaArrowCircleRight className="ms-1" />
+                      </span>
+                    </Button>
+                  </span>
+                </Row>
+              </Card.Footer>
             </Card>
           </Col>
         </CardGroup>
+      </Container>
+    );
+  } else if (!context.totalQ && showOrder) {
+    return (
+      <Container className="text-center mt-5">
+        <h2 className="h1 fontTitle mb-4">{`YOUR ORDER: ${showOrder}`}</h2>
+        <Link to="/">
+          <Button variant="outline-primary">Take me to buy!</Button>
+        </Link>
       </Container>
     );
   } else {
