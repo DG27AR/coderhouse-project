@@ -19,13 +19,13 @@ const Cart = () => {
 
   function handleBuy(cart) {
     const buyerData = { name: 'Buyer', mail: 'buyer@buyer', phone: '000000000' };
-    let theId = 0;
+    const total = context.totalPrice;
+    const date = new Date();
+
     firestore
       .collection('orders')
-      .add({ buyerData, cart })
+      .add({ buyerData, cart, date, total })
       .then(res => setShowOrder(res.id));
-
-    return theId;
   }
 
   if (context.totalQ) {
