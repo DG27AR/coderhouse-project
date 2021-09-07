@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import { FaStar, FaTrashAlt } from 'react-icons/fa';
 import { useContext } from 'react';
 import Context from '../contexts/Context';
+import DropboxImg from '../services/DropboxImg';
 
 function Item(props) {
   const itemParams = useParams();
@@ -15,7 +16,9 @@ function Item(props) {
         <Row>
           <Col xs={3} className="p-3">
             <Link to={`/item/${props.producto.id}`}>
-              <Card.Img src={props.producto.image} alt={props.producto.title} />
+              <div className="card-img-wrap p-2">
+                <Card.Img src={DropboxImg(props.producto.image)} alt={props.producto.title} />
+              </div>
             </Link>
           </Col>
           <Col xs={9} className="px-0 py-2">
