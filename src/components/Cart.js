@@ -3,7 +3,7 @@ import { Container, Col, Card, CardGroup, Button, Row } from 'react-bootstrap';
 import { FaArrowCircleRight, FaTrashAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Context from '../contexts/Context';
-import Item from './Item';
+import CartItem from './CartItem';
 import { firestore } from '../firebase';
 
 const Cart = () => {
@@ -71,12 +71,12 @@ const Cart = () => {
           {context.items.map(item => {
             return (
               <Col key={item.id} xs={12} md={6} lg={4} className="p-2">
-                <Item producto={item} />
+                <CartItem producto={item} />
               </Col>
             );
           })}
           <Col className="p-2">
-            <Card className="h-100 rounded-0 border-2 border-secondary shadow mt-2 mb-5">
+            <Card className="h-100 rounded-0 border-2 border-secondary shadow">
               <Card.Title className="fontTitle ms-2 mt-2 fs-3">TOTAL ORDER</Card.Title>
               <Card.Body>
                 <Card.Text className="fontTitle fs-4">{context.totalPrice}</Card.Text>
@@ -86,9 +86,9 @@ const Cart = () => {
                 <Row className="mx-1 my-2 pb-2 bg-cart-card-footer shadow px-2 pt-1">
                   <span className="fs-6 text-end px-0">
                     <Button
-                      className="pb-1 pt-0 pe-1 ps-0 mt-1 me-0 border-0 rounded-pill"
+                      className="pb-1 pt-0 pe-1 ps-0 mt-1 me-0 rounded-pill"
                       size="sm"
-                      variant="outline-primary"
+                      variant="success"
                       onClick={() => handleBuy(context.items)}
                     >
                       <span className="ms-2 me-1">

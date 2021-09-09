@@ -21,11 +21,19 @@ const CartContext = ({ children }) => {
     );
   }, [items]);
 
-  function addItem(id, q, title, price, description, image, category) {
+  function addItem(id, q, title, price, description, image, category, discount) {
     // Agregar Items
     setItems([
       ...items,
-      { id: id, q: q, title: title, price: price, description: description, image: image, category: category },
+      {
+        id: id,
+        q: q,
+        title: title,
+        price: price / (discount + 1),
+        description: description,
+        image: image,
+        category: category,
+      },
     ]);
     console.log(`Se agregaron ${q} productos del id ${id}`);
   }
