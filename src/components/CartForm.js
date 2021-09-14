@@ -4,6 +4,7 @@ import { FaArrowCircleRight } from 'react-icons/fa';
 import Context from '../contexts/Context';
 import { firestore } from '../firebase';
 import MyLoader from './MyLoader';
+import validator from 'validator';
 
 const CartForm = props => {
   let context = useContext(Context);
@@ -45,7 +46,14 @@ const CartForm = props => {
     }
   };
   const validation = () => {
-    if (name.trim().length > 5 && phone.trim().length > 9 && email.trim().length > 9) {
+    if (
+      validator.isAlpha(name) &&
+      validator.isLength(name, [{ min: 6, max: 30 }]) &&
+      validator.isNumeric(phone) &&
+      validator.isLength(phone, [{ min: 10, max: 10 }]) &&
+      validator.isEmail(email) &&
+      validator.isLength(email, [{ min: 6, max: 30 }])
+    ) {
       return true;
     } else {
       return false;
@@ -59,16 +67,16 @@ const CartForm = props => {
           <Card.Body>
             <Form.Group className="mb-3">
               <Form.Label>Name</Form.Label>
-              <Form.Control type="text" placeholder="6 caracthers minimum" onChange={saveName} />
+              <Form.Control type="text" placeholder="John Doe (6 characters minimum)" onChange={saveName} />
               <Form.Text className="text-muted">We'll never share your email with anyone else.</Form.Text>
             </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>Phone</Form.Label>
-              <Form.Control type="text" placeholder="10 caracthers minimum" onChange={savePhone} />
+              <Form.Control type="text" placeholder="1111111111 (10 characters exactly)" onChange={savePhone} />
             </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>Mail</Form.Label>
-              <Form.Control type="text" placeholder="10 caracthers minimum" onChange={saveEmail} />
+              <Form.Control type="text" placeholder="your@mail.com (6 characters minimum)" onChange={saveEmail} />
             </Form.Group>
             <Row>
               <Col xs={6}>

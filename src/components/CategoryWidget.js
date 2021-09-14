@@ -13,14 +13,14 @@ const CategoryWidget = props => {
       <Dropdown.Menu>
         <Dropdown.Item key={0} className="text-uppercase">
           <LinkContainer to="/">
-            <small>All Products</small>
+            <div>All Products</div>
           </LinkContainer>
         </Dropdown.Item>
         {props.categories.map(category => {
           return (
             <Dropdown.Item key={category.id} className="text-uppercase">
               <LinkContainer to={`/category/${category.title}`}>
-                <small>{category.title}</small>
+                <div>{category.title}</div>
               </LinkContainer>
             </Dropdown.Item>
           );

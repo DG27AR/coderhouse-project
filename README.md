@@ -2,7 +2,7 @@
 
 Proyecto realizado para el curso de CoderHouse de React, camada 14680.
 
-Deploy: [https://coderhouse-project-grassino.vercel.app/] (https://coderhouse-project-grassino.vercel.app/)
+Deploy: [https://coderhouse-project-grassino.vercel.app/](https://coderhouse-project-grassino.vercel.app/)
 
 ## Caracteristicas
 
@@ -16,15 +16,7 @@ Deploy: [https://coderhouse-project-grassino.vercel.app/] (https://coderhouse-pr
 
 ### Notas adicionales
 
-El proyecto tiene una estructura que podriamos dividir en tres agrupaciones:
-
-- Catalogo: ItemListContainer --> ItemContainer --> Item
-- Detalle: ItemDetailContainer --> ItemDetail
-- Navbar: Navbar --> (CartWidget, CategoryWidget)
-
-A su vez implementa como loader un Spinner de [react-bootstrap](https://react-bootstrap.netlify.app/) para mejorar la experiencia de usuario.
-
-Por ultimo, se utilizo tema de Bootstrap custom desde [Bootswacth](https://bootswatch.com/).
+Se utilizo tema de Bootstrap custom desde [Bootswatch](https://bootswatch.com/).
 
 ## Adicionales a lo solicitado
 
@@ -40,7 +32,6 @@ En futuras versiones se espera agregar lo siguiente para ampliar el proyecto:
 - Implementación de login de usuarios.
 - Mejorar manejo de stock (ejemplo: Mostar, o no, productos sin stock).
 - Implementar pasarela de pagos.
-- Implementar validación mas exhaustiva de formulario.
 - Implementar soporte para mas de una foto por producto.
 
 ## Dependencias instaladas
@@ -48,5 +39,7 @@ En futuras versiones se espera agregar lo siguiente para ampliar el proyecto:
 - [react-bootstrap](https://react-bootstrap.netlify.app/)
 - [react-router-dom](https://reactrouter.com/)
 - [react-router-bootstrap](https://github.com/react-bootstrap/react-router-bootstrap/)
-- [firebase] (https://www.npmjs.com/package/firebase)
-- [react-icons] (https://react-icons.github.io/react-icons/)
+- [firebase](https://www.npmjs.com/package/firebase)
+- [react-icons](https://react-icons.github.io/react-icons/)
+- [validator](https://www.npmjs.com/package/validator)
+
