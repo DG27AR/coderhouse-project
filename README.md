@@ -2,6 +2,8 @@
 
 Proyecto realizado para el curso de CoderHouse de React, camada 14680.
 
+Deploy: [https://coderhouse-project-grassino.vercel.app/] (https://coderhouse-project-grassino.vercel.app/)
+
 ## Caracteristicas
 
 - Navegabilidad entre catalogo completo, filtro por categorias dinámico y detalle individual del producto.
