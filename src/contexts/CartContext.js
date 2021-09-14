@@ -4,11 +4,6 @@ import { Provider } from './Context';
 const CartContext = ({ children }) => {
   const [items, setItems] = useState([]);
 
-  useEffect(() => {
-    console.log(`Items dentro del context:`);
-    console.log(items);
-  }, [items]);
-
   const [totalQ, setTotalQ] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
 
@@ -22,7 +17,6 @@ const CartContext = ({ children }) => {
   }, [items]);
 
   function addItem(id, q, title, price, description, image, category, discount) {
-    // Agregar Items
     setItems([
       ...items,
       {
@@ -35,17 +29,12 @@ const CartContext = ({ children }) => {
         category: category,
       },
     ]);
-    console.log(`Se agregaron ${q} productos del id ${id}`);
   }
   function removeItem(id) {
-    // Remueve Items por id
     setItems(items.filter(item => item.id !== id));
-    console.log(`Se quitaron todos productos del id ${id}`);
   }
   function clear() {
-    // Limpia el carrito
     setItems([]);
-    console.log(`Se quitaron TODOS productos`);
   }
   function isInCart(i) {
     return items.find(item => item.id === i);

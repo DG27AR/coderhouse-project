@@ -1,6 +1,6 @@
 import { Card, Row, Col, Button } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import ItemBadges from './ItemBadges';
 import ItemPrice from './ItemPrice';
 import CardTitle from './CardTitle';
@@ -11,11 +11,11 @@ function Item(props) {
       <Card.Body className="px-1 pb-1 pt-0">
         <Row>
           <Col xs="4" md="12" className="px-md-5">
-            <Link to={`/item/${props.producto.id}`}>
+            <NavLink to={`/item/${props.producto.id}`}>
               <div className="card-img-wrap">
                 <Card.Img src={props.producto.image} alt={props.producto.title} />
               </div>
-            </Link>
+            </NavLink>
           </Col>
           <Col xs="8" md="12" className=" px-3 pt-3">
             <LinkContainer to={`/item/${props.producto.id}`}>

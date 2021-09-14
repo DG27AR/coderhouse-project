@@ -24,7 +24,7 @@ function ItemDetail(props) {
   };
 
   return (
-    <Container>
+    <Container className="min-vh-85">
       <Card className="mt-3 rounded-0 border-2 border-secondary shadow">
         <Card.Body>
           <Row>

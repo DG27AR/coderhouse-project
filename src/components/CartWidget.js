@@ -3,12 +3,12 @@ import { FaShoppingCart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Context from '../contexts/Context';
 
-function CartWidget(props) {
+function CartWidget() {
   let context = useContext(Context);
 
   return (
     <span className="text-light ms-2">
-      <Link to="/cart/cart">
+      <Link to="/cart">
         <div className="me-1 d-inline-block">
           <div className="border border-0 btn btn-primary position-relative p-0">
             <FaShoppingCart className="text-light fs-5" />

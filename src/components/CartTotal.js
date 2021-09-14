@@ -3,7 +3,7 @@ import { Col, Card, Button, Row } from 'react-bootstrap';
 import { FaTrashAlt } from 'react-icons/fa';
 import Context from '../contexts/Context';
 
-const CartTotal = props => {
+const CartTotal = () => {
   const context = useContext(Context);
 
   return (

@@ -5,23 +5,18 @@ import { Link } from 'react-router-dom';
 
 const ItemCount = props => {
   const [contador, setContador] = useState(props.initial);
-
   const sumar = function sumar(numero, valor) {
     if (numero > 0 && hayStock(numero, props.stock)) {
       numero = numero + valor;
     }
-
     return numero;
   };
-
   const restar = function restar(numero, valor) {
     if (numero > 1) {
       numero = numero - valor;
     }
-
     return numero;
   };
-
   const hayStock = function hayStock(numero, stock) {
     if (numero < stock) {
       return true;
@@ -29,7 +24,6 @@ const ItemCount = props => {
       return false;
     }
   };
-
   return (
     <Card className="mb-0 py-0 border-0">
       <Container className="p-0">

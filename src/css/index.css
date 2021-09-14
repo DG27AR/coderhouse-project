@@ -1,9 +1,3 @@
-/* Fuentes
-font-family: 'Open Sans', sans-serif;
-Titulos
-font-family: 'Raleway', sans-serif;
-*/
-
 .reboot {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -41,7 +35,7 @@ font-family: 'Raleway', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.125);
+  background-color: lightgray;
 }
 
 .plus-minus-button:focus {
@@ -104,4 +98,19 @@ font-family: 'Raleway', sans-serif;
 .img-appear {
   width: 100%;
   height: 100%;
+}
+
+.custom-footer {
+  height: 10vh;
+}
+
+.vh-5 {
+  height: 7vh;
+}
+
+.min-vh-85 {
+  min-height: 83vh;
+}
+.min-vh-75 {
+  min-height: 75vh;
 }

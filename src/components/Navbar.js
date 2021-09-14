@@ -24,10 +24,8 @@ function MyNavbar() {
       });
   }, []);
 
-  /* <Navbar bg="primary" variant="dark" expand="lg" className="sticky-top py-0"> */
-
   return (
-    <Nav className="sticky-top">
+    <Nav className="sticky-top vh-5">
       <Container className="bg-primary" fluid>
         <Container className="text-white">
           <Row className="mt-1 mb-0">
@@ -36,7 +34,6 @@ function MyNavbar() {
                 <Link to="/">
                   <img alt="Foodhouse" src={myLogo} width="35rem" height="35rem" className="pb-2" />
                 </Link>
-                {/* <span className="fontLogo text-white align-top navBarFontSize fs-2">FOODHOUSE</span> */}
                 <span className="align-center ms-1 fontLogo fs-4">FOODHOUSE</span>
               </Navbar.Brand>
             </Col>
@@ -54,7 +51,5 @@ function MyNavbar() {
     </Nav>
   );
 }
-
-/* </Navbar> */
 
 export default MyNavbar;

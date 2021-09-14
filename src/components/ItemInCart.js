@@ -21,7 +21,7 @@ const ItemInCart = props => {
         </Button>
       </Col>
       <Col xs={12} lg={4} className="mt-2">
-        <Link to="/cart/cart">
+        <Link to="/cart">
           <Button className="w-100 rounded-0" variant="success" size="sm">
             To the cart!
             <FaShoppingCart className="ms-1" />
