@@ -1,5 +1,5 @@
 import { Col, CardGroup, Container } from 'react-bootstrap';
-import Item from './item2';
+import Item from './item';
 
 function ItemList(props) {
   return (

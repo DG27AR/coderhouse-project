@@ -2,8 +2,9 @@ import { Card, Row, Col, Button } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaTrashAlt } from 'react-icons/fa';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import Context from '../contexts/Context';
+import CardTitle from './CardTitle';
 
 function Item(props) {
   const context = useContext(Context);
@@ -19,25 +20,29 @@ function Item(props) {
               </div>
             </Link>
           </Col>
-          <Col xs={8} className="px-0 pt-3">
+          <Col className="px-0 pt-3">
             <LinkContainer to={`/item/${props.producto.id}`}>
-              <Card.Title className="fw-bold text-dark me-3 mb-1 fontTitle">{props.producto.title}</Card.Title>
+              <CardTitle
+                producto={props.producto}
+                textClasses="fw-bold text-dark me-3 mb-1 fontTitle"
+                starClasses="text-warning fs-5 me-1 mb-1"
+              />
             </LinkContainer>
           </Col>
         </Row>
       </Card.Body>
       <Card.Footer className="fs-5 pt-0 border-0 rounded-0 bg-secondary">
-        <Row className="mt-0">
-          <Col xs={4} className="ps-0 text-center">
+        <Row className="mt-0 px-1">
+          <Col xs={6} className="text-start">
             <span className="fs-6">
-              <small>{`${props.producto.q} unit x ${Intl.NumberFormat('en-IN', {
+              <small>{`${props.producto.q} x ${Intl.NumberFormat('en-IN', {
                 style: 'currency',
                 currency: 'USS',
                 minimumFractionDigits: 2,
               }).format(props.producto.price)}`}</small>
             </span>
           </Col>
-          <Col xs={8} className="text-end fs-6 fw-bold">
+          <Col xs={6} className="text-end fs-6 fw-bold">
             {Intl.NumberFormat('en-IN', { style: 'currency', currency: 'USS', minimumFractionDigits: 2 }).format(
               props.producto.price * props.producto.q
             )}

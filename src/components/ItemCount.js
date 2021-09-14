@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Card, Row, Col, Button } from 'react-bootstrap';
 import { FaPlus, FaMinus, FaCartPlus } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const ItemCount = props => {
   const [contador, setContador] = useState(props.initial);
@@ -33,7 +34,7 @@ const ItemCount = props => {
     <Card className="mb-0 py-0 border-0">
       <Container className="p-0">
         <Row>
-          <Col xs={12} lg={6} className="mt-2">
+          <Col xs={12} lg={4} className="mt-2">
             <Row className="border border-grey mx-0 bg-secondary">
               <Col xs={4} className="text-start">
                 <Button
@@ -60,12 +61,19 @@ const ItemCount = props => {
               </Col>
             </Row>
           </Col>
-          <Col className="mt-2" xs={12} lg={6}>
+          <Col className="mt-2" xs={12} lg={4}>
             <Row className="m-0">
               <Button className="rounded-0" variant="primary" size="sm" onClick={() => props.onAdd(contador)}>
                 Add to the cart <FaCartPlus />
               </Button>
             </Row>
+          </Col>
+          <Col xs={12} lg={4} className="mt-2">
+            <Link to="/">
+              <Button className="w-100 rounded-0" variant="outline-success" size="sm">
+                Keep Buying
+              </Button>
+            </Link>
           </Col>
         </Row>
       </Container>
